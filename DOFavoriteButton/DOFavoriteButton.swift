@@ -345,23 +345,23 @@ open class DOFavoriteButton: UIButton {
         self.addTarget(self, action: #selector(DOFavoriteButton.touchCancel(_:)), for: UIControlEvents.touchCancel)
     }
 
-    func touchDown(_ sender: DOFavoriteButton) {
+    @objc func touchDown(_ sender: DOFavoriteButton) {
         self.layer.opacity = 0.4
     }
-    func touchUpInside(_ sender: DOFavoriteButton) {
+    @objc func touchUpInside(_ sender: DOFavoriteButton) {
         self.layer.opacity = 1.0
     }
-    func touchDragExit(_ sender: DOFavoriteButton) {
+    @objc func touchDragExit(_ sender: DOFavoriteButton) {
         self.layer.opacity = 1.0
     }
-    func touchDragEnter(_ sender: DOFavoriteButton) {
+    @objc func touchDragEnter(_ sender: DOFavoriteButton) {
         self.layer.opacity = 0.4
     }
-    func touchCancel(_ sender: DOFavoriteButton) {
+    @objc func touchCancel(_ sender: DOFavoriteButton) {
         self.layer.opacity = 1.0
     }
 
-    open func select() {
+    @objc open func select() {
         isSelected = true
         imageShape.fillColor = imageColorOn.cgColor
 
@@ -380,7 +380,7 @@ open class DOFavoriteButton: UIButton {
         CATransaction.commit()
     }
 
-    open func deselect() {
+    @objc open func deselect() {
         isSelected = false
         imageShape.fillColor = imageColorOff.cgColor
 
